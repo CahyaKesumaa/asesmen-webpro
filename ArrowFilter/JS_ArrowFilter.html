@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+                List Filter
+        </title>
+        <style>
+            body{
+                background-color: white;
+                font-family: Arial, Helvetica, sans-serif;
+                
+            }
+            input{
+                padding: 5px;
+                margin: 1px 3px;
+            }
+            .item{
+                border: 1px solid rgb(225, 224, 224);
+                background-color: rgb(225, 224, 224);
+                color: black;
+                font-size: smaller;
+                margin: 3px;
+                list-style: none;
+                padding: 1px 5px;
+            }
+            ul{
+                padding: 0px;
+            }
+            p{
+                margin: 0px;
+            }
+
+
+
+        </style>
+    </head>
+
+    <body>
+        <form>
+            <input type="text" id="search1" placeholder="Filter list.." id="input1" onkeyup="search()">
+        </form>
+        <div class="list1" id="list1">
+            <ul>
+                <li class="item"><p>Apple</p></li>
+                <li class="item"><p>Banana</p></li>
+                <li class="item"><p>Cherry</p></li>
+                <li class="item"><p>Date</p></li>
+                <li class="item"><p>Elderberry</p></li>
+            </ul>
+
+        </div>
+        
+        <script>
+            const search = () => {
+                const searchbox = document.getElementById("search1").value.toUpperCase();
+                const list = document.getElementById("list1");
+                const barang = document.querySelectorAll(".item");
+                const namaitem = list.getElementsByTagName("p");
+                
+                for (var i = 0; i < namaitem.length; i++){
+                    let match = barang[i].getElementsByTagName('p')[0];
+
+                    if (match){
+                        let textvalue = match.textContent || match.innerHTML
+
+                        if (textvalue.toUpperCase().indexOf(searchbox) > -1){
+                            barang[i].style.display = "";
+                        }
+                        else {
+                            barang[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>KUIS PEMROGRAMAN WEB JS-MODULES</title>
+        <style>
+            .form1{
+                text-align: center;
+                padding: 1px 10px 10px 10px;
+                background-color: rgb(219, 219, 219);
+                margin: 1px 630px;
+                border-radius: 20px;
+
+            }
+            button{
+                width: 100px;
+                height: 30px;
+                margin: 2px 1px 5px 1px;
+            }
+            .insert{
+                width: 200px;
+                padding: 5px;
+                margin: 3px;
+                border-radius: 4px;
+            }
+            #hasil{
+                text-align: left;
+                margin: 5px auto;
+                width: 185px;
+                border-radius: 3px;
+                border: 1px solid black;
+                background-color: aliceblue;
+                padding: 8px;
+            }
+        </style>
+</head>
+
+<body>
+    <form class="form1">
+        
+        <input class="insert" type="number" id="number1" placeholder="Number 1"><br>
+        <input class="insert" type="number" id="number2" placeholder="Number 2">
+
+        <button type="button" onclick="tambah()">ADD</button>
+        <button type="button" onclick="kurang()">Subtract</button>
+        <button type="button" onclick="kali()">Multyply</button>
+        <button type="button" onclick="bagi()">Devide</button>
+
+        <div>
+            <p id="hasil"></p>
+        </div>
+    </form>
+
+    <script>
+        var jumlah;
+
+        function tambah(){
+            let x = Number(document.getElementById("number1").value)
+            let y = Number(document.getElementById("number2").value)
+            jumlah=x+y;
+            document.getElementById("hasil").innerHTML = "Result :"+jumlah;
+        }
+        function kurang(){
+            let x = document.getElementById("number1").value
+            let y = document.getElementById("number2").value
+            jumlah=x-y;
+            document.getElementById("hasil").innerHTML = "Result :"+jumlah;
+        }
+        function kali(){
+            let x = document.getElementById("number1").value
+            let y = document.getElementById("number2").value
+            jumlah=x*y;
+            document.getElementById("hasil").innerHTML = "Result :"+jumlah;
+        }
+        function bagi(){
+            let x = document.getElementById("number1").value
+            let y = document.getElementById("number2").value
+            jumlah=x/y;
+            document.getElementById("hasil").innerHTML = "Result :"+jumlah;
+        }
+    </script>
+</body>
+
+</html>
